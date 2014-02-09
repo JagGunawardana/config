@@ -15,6 +15,9 @@ cd ~/.vim/bundle
 git clone git://github.com/tpope/vim-fugitive.git
 
 cd ~/.vim/bundle
+wget -O conqueterm.vmb http://www.vim.org/scripts/download_script.php?src_id=16279
+
+cd ~/.vim/bundle
 git clone https://github.com/nvie/vim-flake8
 
 cd ~/.vim/bundle
@@ -25,6 +28,7 @@ git clone https://github.com/kien/ctrlp.vim.git
 
 cd ~/.vim/bundle
 git clone git://github.com/davidhalter/jedi-vim.git
+
 
 mkdir -p ~/.vim/ftplugin
 wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
