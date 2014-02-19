@@ -52,6 +52,15 @@ set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 "autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 " au InsertLeave * match ExtraWhitespace /\s\+$/
 
+" Conque
+let g:ConqueTerm_FastMode = 0
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_CWInsert = 1
+let g:ConqueTerm_ExecFileKey = '<F6>'
+map <Leader>e <F9>
+map <Leader>ef <F6>
+
+
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
