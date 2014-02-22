@@ -126,6 +126,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Marks on
+let g:showmarks_enable=1
+
 " ============================================================================
 " Specific Python IDE Setup
 " ============================================================================
