@@ -11,11 +11,13 @@ wget -O blackboard.vim http://ianbits.googlecode.com/svn/trunk/vim/blackboard.vi
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-wget -O ~/.vim/bundle/showmarks.vim http://www.vim.org/scripts/download_script.php?src_id=3342
+wget -O ~/.vim/showmarks.vim http://www.vim.org/scripts/download_script.php?src_id=3342
 
 cd ~/.vim/bundle
 git clone git://github.com/tpope/vim-fugitive.git
+
+cd ~/.vim/bundle
+wget -O vtreeexplorer.tar.gz http://www.vim.org/scripts/download_script.php?src_id=8097
 
 cd ~/.vim/bundle
 wget -O conqueterm.vmb http://www.vim.org/scripts/download_script.php?src_id=16279

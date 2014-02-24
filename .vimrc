@@ -154,6 +154,7 @@ set wildignore+=*/coverage/*
 let g:jedi#related_names_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
+map <Leader>h <esc><s-k>
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Better navigating through omnicomplete option list
