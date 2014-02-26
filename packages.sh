@@ -7,4 +7,6 @@ sudo apt-get install python-dev
 sudo pip install virtualenv==1.10.1
 sudo pip install virtualenvwrapper
 
-ln -s ./.vimrc ~/.vimrc
+ln -s `pwd`/.vimrc ~/.vimrc
+ln -s `pwd`/.tmux.conf ~/.tmux.conf
+ln -s `pwd`/.bashrc  ~/.bashrc 

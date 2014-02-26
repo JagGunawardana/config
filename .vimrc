@@ -12,6 +12,8 @@ autocmd! bufwritepost .vimrc source %
 set pastetoggle=<F2>
 set clipboard=unnamed
 
+
+
 " Allow the mouse to play 
 set mouse=a  " on OSX press ALT and click
 
@@ -51,6 +53,17 @@ set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 " Show trailing whitespace (must be before colour scheme)
 "autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 " au InsertLeave * match ExtraWhitespace /\s\+$/
+"
+" Showing line numbers and length
+set number  " show line numbers
+set tw=79   " width of document (used by gd)
+" set nowrap  " don't automatically wrap on load
+set fo-=t   " don't automatically wrap text when typing
+set colorcolumn=80
+set cursorline
+autocmd InsertEnter * highlight CursorLine guifg=brown guibg=blue ctermfg=brown ctermbg=blue
+autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
+highlight ColorColumn ctermbg=233
 
 " Conque
 let g:ConqueTerm_FastMode = 0
@@ -92,13 +105,6 @@ syntax on
 " let python_highlight_all = 1
 
 
-" Showing line numbers and length
-set number  " show line numbers
-set tw=79   " width of document (used by gd)
-" set nowrap  " don't automatically wrap on load
-set fo-=t   " don't automatically wrap text when typing
-set colorcolumn=80
-highlight ColorColumn ctermbg=233
 
 " easier formatting of paragraphs
 "" vmap Q gq
