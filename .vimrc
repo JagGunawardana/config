@@ -58,12 +58,12 @@ set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 set number  " show line numbers
 set tw=79   " width of document (used by gd)
 " set nowrap  " don't automatically wrap on load
-set fo-=t   " don't automatically wrap text when typing
-set colorcolumn=80
+" set fo-=t   " don't automatically wrap text when typing
 set cursorline
-autocmd InsertEnter * highlight CursorLine guifg=brown guibg=blue ctermfg=brown ctermbg=blue
-autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
-highlight ColorColumn ctermbg=233
+autocmd InsertEnter * highlight CursorLine guifg=brown guibg=blue ctermfg=None ctermbg=None cterm=bold
+autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=None ctermbg=None
+set colorcolumn=80
+highlight ColorColumn ctermbg=grey
 
 " Conque
 let g:ConqueTerm_FastMode = 0
@@ -125,6 +125,9 @@ set expandtab
 " set tw=78 ts=4 sw=4 sta et sts=4 ai
 " Make needs TABs
 autocmd FileType make  set noexpandtab 
+
+" Prettyfy XML
+autocmd FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " Make search case insensitive
 set hlsearch
