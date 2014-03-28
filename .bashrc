@@ -5,9 +5,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export EDITOR=vi
 export WORKON_HOME=~/.virtualenvs
-export DJANGO_SETTINGS_MODULE=settings.local
 . /usr/local/bin/virtualenvwrapper.sh
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -91,6 +89,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias file_watch=~/bin/file_watch.sh
+
 alias tmux="TERM=screen-256color-bce tmux"
 function run_cov {
     coverage run --source "$1" -m py.test && coverage report
@@ -115,3 +115,8 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+export EDITOR=vi
+export DJANGO_SETTINGS_MODULE=settings.local
+export PATH=$PATH:~/bin
+

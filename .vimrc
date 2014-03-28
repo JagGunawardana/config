@@ -62,8 +62,13 @@ set tw=79   " width of document (used by gd)
 set cursorline
 autocmd InsertEnter * highlight CursorLine guifg=brown guibg=blue ctermfg=None ctermbg=None cterm=bold
 autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=None ctermbg=None
-set colorcolumn=80
+
+" Work to 120 character line length
+set colorcolumn=120
 highlight ColorColumn ctermbg=grey
+let g:flake8_max_line_length=120
+autocmd FileType python map <buffer> <Leader>p :call Flake8()<CR>
+" let g:flake8_ignore="E501,W293"
 
 " Conque
 let g:ConqueTerm_FastMode = 0
