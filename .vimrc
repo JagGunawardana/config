@@ -56,7 +56,7 @@ set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 "
 " Showing line numbers and length
 set number  " show line numbers
-set tw=79   " width of document (used by gd)
+set tw=119   " width of document (used by gd)
 " set nowrap  " don't automatically wrap on load
 " set fo-=t   " don't automatically wrap text when typing
 set cursorline
@@ -133,6 +133,8 @@ autocmd FileType make  set noexpandtab
 
 " Prettyfy XML
 autocmd FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+autocmd FileType json exe ":%!python -m json.tool"
+com! FormatJSON %!python -m json.tool
 
 " Make search case insensitive
 set hlsearch
