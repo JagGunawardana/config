@@ -7,6 +7,11 @@ sudo apt-get install python-dev
 sudo pip install virtualenv==1.10.1
 sudo pip install virtualenvwrapper
 
+mkdir -p ~/bin
+
 ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
 ln -s `pwd`/.bashrc  ~/.bashrc 
+ln -s `pwd`/bin/db.sh ~/bin/db.sh
+ln -s `pwd`/bin/file_watch.sh ~/bin/file_watch.sh
+

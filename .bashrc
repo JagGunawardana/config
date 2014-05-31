@@ -66,7 +66,12 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+# Cursor
+    cursor_style_full_block_blinking=6 # hardware cursor (blinking)
+    cursor_foreground_default=0 # same color as the other terminal text
+    cursor_styles="\e[?${cursor_style_full_block_blinking};${cursor_foreground_default};c" 
+#PS1="${start_prompt_styles}[\u@\h \W] \$${end_prompt_styles}${cursor_styles} "
+    PS1="\[\e]6;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -115,6 +120,7 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
 
 export EDITOR=vi
 export DJANGO_SETTINGS_MODULE=settings.local
