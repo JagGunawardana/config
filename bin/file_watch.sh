@@ -14,7 +14,7 @@ while true
 do
     new_files=`find $dirname -type f -newer $lockfile -name "*.py"`
     if [ ${#new_files} -gt 0 ]; then
-        py.test $2 || echo -e "\a"
+        py.test --pdb $2 || echo -e "\a"
     fi
     touch $lockfile
     sleep 1
