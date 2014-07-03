@@ -8,32 +8,3 @@ wget -O candy.vim http://www.vim.org/scripts/download_script.php?src_id=817
 wget -O pychimp.vim http://www.vim.org/scripts/download_script.php?src_id=17973
 wget -O blackboard.vim http://ianbits.googlecode.com/svn/trunk/vim/blackboard.vim
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-
-wget -O ~/.vim/showmarks.vim http://www.vim.org/scripts/download_script.php?src_id=3342
-
-cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-fugitive.git
-
-cd ~/.vim/bundle
-wget -O vtreeexplorer.tar.gz http://www.vim.org/scripts/download_script.php?src_id=8097
-
-cd ~/.vim/bundle
-wget -O conqueterm.vmb http://www.vim.org/scripts/download_script.php?src_id=16279
-
-cd ~/.vim/bundle
-git clone https://github.com/nvie/vim-flake8
-
-cd ~/.vim/bundle
-git clone git://github.com/Lokaltog/vim-powerline.git
-
-cd ~/.vim/bundle
-git clone https://github.com/kien/ctrlp.vim.git
-
-cd ~/.vim/bundle
-git clone git://github.com/davidhalter/jedi-vim.git
-
-
-mkdir -p ~/.vim/ftplugin
-wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492

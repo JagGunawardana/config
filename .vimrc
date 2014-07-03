@@ -38,6 +38,11 @@ map <c-h> <c-w>h
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
 
+" easier moving between buffers
+map <Leader>l <esc>:bnext<CR>
+map <Leader>h <esc>:bprevious<CR>
+
+
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
 
@@ -49,11 +54,6 @@ vnoremap > >gv  " better indentation
 " Smart indenting
 set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
-
-" Show trailing whitespace (must be before colour scheme)
-"autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-" au InsertLeave * match ExtraWhitespace /\s\+$/
-"
 " Showing line numbers and length
 set number  " show line numbers
 set tw=119   " width of document (used by gd)
@@ -63,10 +63,8 @@ set cursorline
 autocmd InsertEnter * highlight CursorLine guifg=brown guibg=blue ctermfg=None ctermbg=None cterm=bold
 autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=None ctermbg=None
 
-" Work to 120 character line length
-set colorcolumn=120
-highlight ColorColumn ctermbg=grey
-let g:flake8_max_line_length=120
+
+" Flake8
 autocmd FileType python map <buffer> <Leader>p :call Flake8()<CR>
 " let g:flake8_ignore="E501,W293"
 
@@ -83,37 +81,36 @@ map <Leader>ef <F6>
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
-" Color scheme !!!
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-" color wombat256mod
-" color distinguished
-" color github
-" color jellybeans
-" color vividchalk
-set nocompatible
-set t_Co=256
-"color pychimp
-"color blackboard
-" color candy
-
-" Setup Pathogen to manage your plugins !!!
-" mkdir -p ~/.vim/autoload ~/.vim/bundle
-" curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim
-" Now you can install any plugin into a .vim/bundle/plugin-name/ folder
-call pathogen#infect()
-
-" Enable syntax highlighting
-filetype off
-filetype plugin indent on
-syntax on
 " let python_highlight_all = 1
 
+" Prep for vundle
+filetype off
+" Vundle config
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
+" Vundle plugins
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'vtreeexplorer'
+Plugin 'nvie/vim-flake8'
+Plugin 'Lokaltog/vim-powerline.git'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'Efficient-python-folding'
+Plugin 'davidhalter/jedi-vim.git'
+Plugin 'Conque-Shell'
+Plugin 'Tagbar'
+Plugin 'bufferlist.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 
+" End of vundle section filetypes back on
+filetype plugin indent on
+syntax on
 " easier formatting of paragraphs
 "" vmap Q gq
 "" nmap Q gqap
+
 
 " History/undo length
 set history=700
@@ -131,7 +128,7 @@ set expandtab
 " Make needs TABs
 autocmd FileType make  set noexpandtab 
 
-" Prettyfy XML
+" Prettyfy XML and JSON
 autocmd FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 autocmd FileType json exe ":%!python -m json.tool"
 com! FormatJSON %!python -m json.tool
@@ -144,6 +141,26 @@ set smartcase
 
 " Marks on
 let g:showmarks_enable=1
+
+" Terminal stuff and colour scheme
+set t_Co=256
+"set background=dark
+"colorscheme solarized
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+"color wombat256mod
+"color distinguished
+"color github
+"color jellybeans
+"color vividchalk
+"color pychimp
+"color blackboard
+"color candy
+"
+" Work to 120 character line length
+set colorcolumn=120
+highlight ColorColumn ctermbg=green
+let g:flake8_max_line_length=120
 
 " ============================================================================
 " Specific Python IDE Setup
@@ -173,6 +190,16 @@ let g:jedi#popup_select_first = 0
 map <Leader>h <esc><s-k>
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
+" Tagbar
+map <Leader>t :TagbarToggle<CR>
+
+" Buffer list
+map <silent>  <Leader>f :call BufferList()<CR>
+let g:BufferListWidth = 25
+let g:BufferListMaxWidth = 50
+hi BufferSelected term = reverse ctermfg=white ctermbg=red cterm=bold
+hi BufferNormal term = NONE ctermfg=black ctermbg=darkcyan cterm=NONE
+
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
 set completeopt=longest,menuone
@@ -196,8 +223,6 @@ autocmd BufWritePost *.py call Flake8()
 " mkdir -p ~/.vim/ftplugin
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
-
-
 
 " Smart indenting
 " set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class

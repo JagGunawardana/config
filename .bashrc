@@ -95,6 +95,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias file_watch=~/bin/file_watch.sh
+alias cls='printf "\033c"'
 
 alias tmux="TERM=screen-256color-bce tmux"
 function run_cov {
