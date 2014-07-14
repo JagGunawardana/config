@@ -103,6 +103,8 @@ Plugin 'Tagbar'
 Plugin 'bufferlist.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
+Plugin 'kshenoy/vim-signature'
+Plugin 'airblade/vim-gitgutter'
 
 " End of vundle section filetypes back on
 filetype plugin indent on
@@ -123,14 +125,12 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
-" Set indent to 4 spaces with no tabs and wrapping at 78 columns
-" set tw=78 ts=4 sw=4 sta et sts=4 ai
+
 " Make needs TABs
-autocmd FileType make  set noexpandtab 
+autocmd FileType make  set noexpandtab
 
 " Prettyfy XML and JSON
 autocmd FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
-autocmd FileType json exe ":%!python -m json.tool"
 com! FormatJSON %!python -m json.tool
 
 " Make search case insensitive
@@ -144,46 +144,37 @@ let g:showmarks_enable=1
 
 " Terminal stuff and colour scheme
 set t_Co=256
-"set background=dark
-"colorscheme solarized
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
-"color wombat256mod
-"color distinguished
-"color github
-"color jellybeans
-"color vividchalk
-"color pychimp
-"color blackboard
-"color candy
-"
+
 " Work to 120 character line length
 set colorcolumn=120
 highlight ColorColumn ctermbg=green
 let g:flake8_max_line_length=120
+
+" GitGutter (and marks)
+highlight SignColumn ctermbg=black
+let g:gitgutter_enabled = 0
+let g:gitgutter_hightlight_lines = 1
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 " ============================================================================
 " Specific Python IDE Setup
 " ============================================================================
 
 " Settings for vim-powerline !!!
-" cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/vim-powerline.git
 set laststatus=2
 set encoding=utf-8
 let g:Powerline_symbols = 'compatible'
 
 " Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 " Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
 let g:jedi#related_names_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
@@ -192,6 +183,9 @@ map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 " Tagbar
 map <Leader>t :TagbarToggle<CR>
+
+" GitGutter
+let g:gitgutter_sign_column_always = 1
 
 " Buffer list
 map <silent>  <Leader>f :call BufferList()<CR>
@@ -219,26 +213,11 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " Static analysis
 autocmd BufWritePost *.py call Flake8()
 
-" Python folding
-" mkdir -p ~/.vim/ftplugin
-" wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
 
-" Smart indenting
-" set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
 " set omnifunc=pythoncomplete#Complete
 " inoremap <Nul> <C-x><C-o>
 
-" Wrap at 72 chars for comments.
-" set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
-" Highlight end of line whitespace.
-" highlight WhitespaceEOL ctermbg=red guibg=red
-" match WhitespaceEOL /\s\+$/
-
-"statusline setup
-" set statusline=%f%c[%l/%L]%P
-" set rulerformat=%f%c[%l/%L]%P
-" set laststatus=2
