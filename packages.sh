@@ -15,6 +15,8 @@ ln -s `pwd`/.bashrc  ~/.bashrc
 ln -s `pwd`/bin/db.sh ~/bin/db.sh
 ln -s `pwd`/bin/file_watch.sh ~/bin/file_watch.sh
 ln -s `pwd`/.pdbrc.py ~/.pdbrc.py
+ln -s `pwd`/.Renviron ~/.Renviron
+ln -s `pwd`/.Rprofile ~/.Rprofile
 
 
 mkdir ~/.vim
