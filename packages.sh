@@ -23,3 +23,4 @@ mkdir ~/.vim
 mkdir ~/.vim/bundle
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +PluginInstall +qall
+pip install git+git://github.com/mverteuil/pytest-ipdb.git
