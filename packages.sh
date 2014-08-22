@@ -1,17 +1,20 @@
-sudo apt-get install git python-pip
-sudo apt-get install mysql-server
-sudo apt-get install mysql-client
-sudo apt-get install libmysqlclient-dev
-sudo apt-get install mysql-client
-sudo apt-get install python-dev
-sudo pip install virtualenv==1.10.1
+sudo apt-get install -y git python-pip
+sudo apt-get install -y mysql-server
+sudo apt-get install -y mysql-client
+sudo apt-get install -y libmysqlclient-dev
+sudo apt-get install -y mysql-client
+sudo apt-get install -y python-dev
+sudo pip install virtualenv
 sudo pip install virtualenvwrapper
+sudo pip install pytest
+sudo pip install ipython
+sudo pip install ipdb
 
 mkdir -p ~/bin
 
 ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
-ln -s `pwd`/.bashrc  ~/.bashrc 
+ln -s `pwd`/.bashrc  ~/.bashrc
 ln -s `pwd`/bin/db.sh ~/bin/db.sh
 ln -s `pwd`/bin/file_watch.sh ~/bin/file_watch.sh
 ln -s `pwd`/.pdbrc.py ~/.pdbrc.py
