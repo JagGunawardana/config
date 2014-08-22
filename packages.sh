@@ -12,6 +12,15 @@ sudo pip install ipdb
 
 mkdir -p ~/bin
 
+
+rm ~/.vimrc
+rm ~/.tmux.conf
+rm ~/.bashrc
+rm ~/bin/file_watch.sh
+rm ~/.pdbrc.py
+rm ~/.Renviron
+rm ~/.Rprofile
+
 ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
 ln -s `pwd`/.bashrc  ~/.bashrc
