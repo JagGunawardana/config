@@ -122,7 +122,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
+set -o vi
 export EDITOR=vi
 export DJANGO_SETTINGS_MODULE=settings.local
 export PATH=$PATH:~/bin
