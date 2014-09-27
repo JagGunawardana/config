@@ -4,6 +4,7 @@ sudo apt-get install -y mysql-client
 sudo apt-get install -y libmysqlclient-dev
 sudo apt-get install -y mysql-client
 sudo apt-get install -y python-dev
+sudo apt-get install -y python-pip
 sudo pip install virtualenv
 sudo pip install virtualenvwrapper
 sudo pip install pytest
