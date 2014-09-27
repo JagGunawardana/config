@@ -21,6 +21,7 @@ rm ~/.pdbrc.py
 rm ~/.Renviron
 rm ~/.Rprofile
 
+pushd ~/setup/config
 ln -s `pwd`/.vimrc ~/.vimrc
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
 ln -s `pwd`/.bashrc  ~/.bashrc
@@ -29,7 +30,7 @@ ln -s `pwd`/bin/file_watch.sh ~/bin/file_watch.sh
 ln -s `pwd`/.pdbrc.py ~/.pdbrc.py
 ln -s `pwd`/.Renviron ~/.Renviron
 ln -s `pwd`/.Rprofile ~/.Rprofile
-
+popd
 
 mkdir ~/.vim
 mkdir ~/.vim/bundle
