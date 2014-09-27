@@ -175,7 +175,8 @@ set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 
 " Settings for jedi-vim
-let g:jedi#related_names_command = "<leader>z"
+" let g:jedi#related_names_command = "<leader>z"
+let g:jedi#usages_command = "<leader>u"
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 map <Leader>h <esc><s-k>
