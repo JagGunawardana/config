@@ -105,6 +105,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'kshenoy/vim-signature'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'mileszs/ack.vim'
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'sjl/gundo.vim'
 
 " End of vundle section filetypes back on
 filetype plugin indent on
@@ -159,9 +162,18 @@ let g:gitgutter_hightlight_lines = 1
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
 
+" Ack
+nmap <leader>g <Esc>:Ack!
+
 " ============================================================================
 " Specific Python IDE Setup
 " ============================================================================
+
+" Ack
+nmap <leader>g <Esc>:Ack!
+
+" Gundo
+map <leader>l :GundoToggle<CR>
 
 " Settings for vim-powerline !!!
 set laststatus=2
@@ -181,6 +193,16 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 map <Leader>h <esc><s-k>
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+" Pytest plugin
+" Execute the tests
+nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+nmap <silent><Leader>tc <Esc>:Pytest class<CR>
+nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+" cycle through test errors
+nmap <silent><Leader>tn <Esc>:Pytest next<CR>
+nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
+nmap <silent><Leader>te <Esc>:Pytest error<CR>
 
 " Tagbar
 map <Leader>t :TagbarToggle<CR>
@@ -222,3 +244,14 @@ set nofoldenable
 " inoremap <Nul> <C-x><C-o>
 
 
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF

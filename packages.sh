@@ -17,6 +17,8 @@ sudo pip install pytest
 sudo pip install ipython
 sudo pip install ipdb
 sudo pip install coverage
+sudo pip install flake8
+sudo pip install zc.buildout
 echo trustybox > /etc/hostname
 
 mkdir -p /home/vagrant/bin
