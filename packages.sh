@@ -51,3 +51,4 @@ vim +PluginInstall +qall
 pip install git+git://github.com/mverteuil/pytest-ipdb.git
 git config --global user.name "Jag Gunawardana"
 git config --global user.email "jag.gunawardana@saffrondigital.com"
+git config --global push.default simple
