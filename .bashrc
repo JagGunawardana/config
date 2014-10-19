@@ -102,7 +102,7 @@ function run_cov {
     coverage run --source "$1" -m py.test && coverage report
 }
 function clone {
-    git clone ssh://git@stash.saffrondigital.com:7999/nex/"$1".git
+    git clone ssh://git@stash.saffrondigital.com:7999/nex/$1.git
 }
 
 # Add an "alert" alias for long running commands.  Use like so:
