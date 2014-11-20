@@ -98,11 +98,16 @@ alias file_watch=~/bin/file_watch.sh
 alias cls='printf "\033c"'
 
 alias tmux="TERM=screen-256color-bce tmux"
+
 function run_cov {
     coverage run --source "$1" -m py.test && coverage report
 }
 function clone {
     git clone ssh://git@stash.saffrondigital.com:7999/nex/$1.git
+}
+function sshagent {
+    eval `ssh-agent -s`
+    ssh-add ~/.ssh/id_rsa
 }
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -129,4 +134,3 @@ set -o vi
 export EDITOR=vi
 export DJANGO_SETTINGS_MODULE=settings.local
 export PATH=$PATH:~/bin
-
