@@ -105,6 +105,9 @@ function run_cov {
 function clone {
     git clone ssh://git@stash.saffrondigital.com:7999/nex/$1.git
 }
+function cookierecipe {
+    cookiecutter ssh://git@stash.saffrondigital.com:7999/nex/$1.git
+}
 function sshagent {
     eval `ssh-agent -s`
     ssh-add ~/.ssh/id_rsa
