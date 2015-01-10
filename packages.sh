@@ -11,6 +11,7 @@ sudo apt-get install -y tmux
 sudo apt-get install -y vim-athena
 sudo apt-get install -y g++
 sudo apt-get install -y exuberant-ctags
+sudo apt-get install -y tig
 sudo pip install virtualenv
 sudo pip install virtualenvwrapper
 sudo pip install pytest
