@@ -94,7 +94,8 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'vtreeexplorer'
 Plugin 'nvie/vim-flake8'
-Plugin 'Lokaltog/vim-powerline.git'
+" Plugin 'Lokaltog/vim-powerline.git'
+Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'davidhalter/jedi-vim.git'
 Plugin 'Conque-Shell'
@@ -107,6 +108,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mileszs/ack.vim'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " End of vundle section filetypes back on
 filetype plugin indent on
