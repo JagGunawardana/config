@@ -102,15 +102,21 @@ alias tmux="TERM=screen-256color-bce tmux"
 function run_cov {
     coverage run --source "$1" -m py.test && coverage report
 }
-function clone {
+function clone_stash {
     git clone ssh://git@stash.saffrondigital.com:7999/nex/$1.git
 }
+function clone_bitbucket {
+    git clone git@bitbucket.org:saffrondigital/$1.git
+}
 function cookierecipe {
-    cookiecutter ssh://git@stash.saffrondigital.com:7999/nex/$1.git
+    cookiecutter ssh://git@bitbucket.org:saffrondigital/$1.git
 }
 function sshagent {
     eval `ssh-agent -s`
     ssh-add ~/.ssh/id_rsa
+}
+function binpath {
+    export PATH=$(pwd)/bin:$PATH
 }
 
 # Add an "alert" alias for long running commands.  Use like so:

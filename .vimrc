@@ -14,7 +14,7 @@ set clipboard=unnamed
 
 
 
-" Allow the mouse to play 
+" Allow the mouse to play
 set mouse=a  " on OSX press ALT and click
 
 
@@ -110,6 +110,7 @@ Plugin 'alfredodeza/pytest.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
+Plugin 'scrooloose/nerdtree'
 
 " End of vundle section filetypes back on
 filetype plugin indent on
@@ -208,6 +209,9 @@ nmap <silent><Leader>te <Esc>:Pytest error<CR>
 
 " Tagbar
 map <Leader>t :TagbarToggle<CR>
+
+" Nerdtree
+map <silent>  <Leader>a :NERDTreeToggle<CR>
 
 " GitGutter
 let g:gitgutter_sign_column_always = 1
