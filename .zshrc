@@ -121,6 +121,16 @@ function assh {
     ssh ubuntu@$1 -i ~/.ssh/saffron_development_jan.pem
 }
 
+function ssui {
+    ssh ubuntu@int-$1.sd-ngp.net
+}
+
+function ssus {
+    ssh ubuntu@staging-$1.sd-ngp.net
+}
+
+
+
 bindkey '^R' history-incremental-search-backward
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
