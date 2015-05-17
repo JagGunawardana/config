@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tmux="TERM=screen-256color-bce tmux"
 alias cls='printf "\033c"'
+alias todo=~/bin/todo.txt_cli-2.10/todo.sh
 
 # Virtualenv wrapper
 export WORKON_HOME=~/.virtualenvs
