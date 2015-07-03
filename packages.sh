@@ -46,8 +46,8 @@ ln -s `pwd`/.Rprofile ~/.Rprofile
 ln -s /home/vagrant/mac/bin/db.sh ~/bin/db.sh
 popd
 
-mkdir /home/vagrant/.vim
-mkdir /home/vagrant/.vim/bundle
+mkdir -p /home/vagrant/.vim
+mkdir -p /home/vagrant/.vim/bundle
 git clone https://github.com/gmarik/vundle.git /home/vagrant/.vim/bundle/vundle
 vim +PluginInstall +qall
 pip install git+git://github.com/mverteuil/pytest-ipdb.git
