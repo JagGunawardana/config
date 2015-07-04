@@ -156,7 +156,6 @@ highlight nonText ctermbg=NONE
 " Work to 120 character line length
 set colorcolumn=120
 highlight ColorColumn ctermbg=green
-let g:flake8_max_line_length=120
 
 " GitGutter (and marks)
 highlight SignColumn ctermbg=black
