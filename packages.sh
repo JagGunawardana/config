@@ -44,6 +44,8 @@ ln -s `pwd`/.pdbrc.py ~/.pdbrc.py
 ln -s `pwd`/.Renviron ~/.Renviron
 ln -s `pwd`/.Rprofile ~/.Rprofile
 ln -s /home/vagrant/mac/bin/db.sh ~/bin/db.sh
+mkdir ~/.config
+ln -s ~/config/.flake8 ./.config/flake8
 popd
 
 mkdir -p /home/vagrant/.vim
