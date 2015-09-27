@@ -45,7 +45,7 @@ ZSH_THEME="muse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker mysql postgres vi-mode)
+plugins=(git docker mysql postgres vi-mode python jsontools paver pep8 thefuck vagrant wd z)
 
 # User configuration
 

@@ -111,6 +111,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
 Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
 
 " End of vundle section filetypes back on
 filetype plugin indent on
