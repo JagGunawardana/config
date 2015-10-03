@@ -49,7 +49,9 @@ plugins=(git docker mysql postgres vi-mode python jsontools paver pep8 thefuck v
 
 # User configuration
 
-export PATH="/home/jag.gunawardana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/jag.gunawardana/bin"
+export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:~/bin
+export GOPATH=~/lib/go
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -94,7 +96,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-#export EDITOR=vi
+export EDITOR=vi
 #export DJANGO_SETTINGS_MODULE=settings.local
 #export PATH=$PATH:~/bin
 
