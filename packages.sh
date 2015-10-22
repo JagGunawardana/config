@@ -22,6 +22,7 @@ sudo pip install ipdb
 sudo pip install coverage
 sudo pip install flake8
 sudo pip install zc.buildout
+sudo pip install --upgrade httpie
 echo trustybox > /etc/hostname
 
 mkdir -p /home/vagrant/bin
