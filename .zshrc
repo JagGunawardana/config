@@ -49,7 +49,7 @@ plugins=(git docker mysql postgres vi-mode python jsontools paver pep8 thefuck v
 
 # User configuration
 
-export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:~/bin
+export PATH=~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:~/bin:/usr/local/packer
 export GOPATH=~/lib/go
 
 # export MANPATH="/usr/local/man:$MANPATH"
